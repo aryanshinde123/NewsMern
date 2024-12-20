@@ -1,15 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage'; // Adjust the path as necessary
+import HomePage from './pages/HomePage'; // Replace with your actual home page component
+import Navbar from './components/Navbar';
+import SubscribePage from './pages/SubscribePage';
+import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
-    <div className="text-center p-4">
-      <h1 className="text-3xl font-bold text-blue-500">Hello, Tailwind!</h1>
-      <p className="mt-2 text-gray-600">Your React app is styled with Tailwind CSS.</p>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path='/navbar' element={<Navbar/>}/>
+          <Route path='/subscribe' element={<SubscribePage/>} />
+          <Route path='/footer' element={<Footer/>}/>
+        </Routes>
+        {/* <Navbar/> */}
+        {/* <HomePage/> */}
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
