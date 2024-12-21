@@ -1,52 +1,74 @@
 import React from 'react';
-import FeaturedArticle from '../components/FeaturedArticle';
-import NewsGrid from '../components/NewsGrid';
+import LeftColumn from '../components/LeftColumn';
+import RightColumn from '../components/RightColumn';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const HomePage = () => {
-  // Example data for articles
-  const featuredArticle = {
-    title: 'Breaking: Major Event Shakes the World',
-    summary: 'An in-depth look at the recent developments and their impact globally.',
-    image: 'https://via.placeholder.com/800x400',
-  };
+  // Sample data for LeftColumn (multiple articles with longer descriptions)
+  const leftArticles = [
+    {
+      title: "Gisèle Pelicot's Fight for Justice",
+      description:
+        "Gisèle Pelicot tells other victims about her battle, as all 51 men are found guilty in a rape trial. This landmark case has sparked discussions across the globe about justice, trauma, and the power of speaking out against abuse.",
+      image: "image1.png",
+      readTime: "6 MIN READ",
+    },
+    {
+      title: "A Survivor's Story of Courage",
+      description:
+        "Another survivor speaks about her experiences during the trial, shedding light on the trauma that continues even after the verdict. Her courage in the face of adversity highlights the need for greater support for victims of sexual assault.",
+      image: "image2.png",
+      readTime: "5 MIN READ",
+    },
+    {
+      title: "The Struggle for Justice Continues",
+      description:
+        "After the guilty verdict, the victims continue their fight for justice and accountability. This ongoing struggle emphasizes the emotional and societal challenges victims face in seeking real change.",
+      image: "image.png",
+      readTime: "7 MIN READ",
+    },
+  ];
 
-  const newsArticles = [
+  // Sample data for RightColumn (multiple articles with descriptions)
+  const rightArticles = [
     {
-      title: 'Technology Advancements in 2024',
-      summary: 'How the tech industry is revolutionizing our daily lives.',
-      image: 'https://via.placeholder.com/400x200',
+      title: "Rape Trial Guilty Verdict",
+      description:
+        "The guilty verdict has shocked the public, and many are reflecting on the implications for future cases of sexual assault. This trial will go down in history as a pivotal moment in the fight for justice.",
+      image: "image2.png",
     },
     {
-      title: 'Global Economic Trends',
-      summary: 'A closer look at the economic outlook for the upcoming year.',
-      image: 'https://via.placeholder.com/400x200',
+      title: "Another Victim Speaks Out",
+      description:
+        "A brave victim has come forward to share her story, adding her voice to the growing chorus of those fighting for justice and exposing the ongoing trauma experienced by survivors.",
+      image: "image.png",
     },
     {
-      title: 'Health Breakthroughs',
-      summary: 'Scientists uncover a cure for a long-standing disease.',
-      image: 'https://via.placeholder.com/400x200',
-    },
-    {
-      title: 'Environmental Challenges',
-      summary: 'The effects of climate change and what’s being done to combat it.',
-      image: 'https://via.placeholder.com/400x200',
+      title: "Dominique Pelicot Faces Investigation",
+      description:
+        "Dominique Pelicot, a key figure in the trial, is now under investigation for his role in the abuse. This article delves into the allegations and the ongoing legal proceedings surrounding him.",
+      image: "image1.png",
     },
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-        <Navbar/>
-      <div className="container mx-auto px-4 py-8">
-        {/* Featured Article Section */}
-        <FeaturedArticle article={featuredArticle} />
+    <div className="min-h-screen">
+      <Navbar />
+      <div className="bg-white p-6">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Left column - spans 2 columns on md and up */}
+          <div className=" space-y-4">
+            <LeftColumn articles={leftArticles} />
+          </div>
 
-        {/* News Grid Section */}
-        <h2 className="text-2xl font-bold text-gray-800 mt-12 mb-6">Latest News</h2>
-        <NewsGrid articles={newsArticles} />
+          {/* Right column */}
+          <div className="md:col-span-2 space-y-4">
+            <RightColumn articles={rightArticles} />
+          </div>
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

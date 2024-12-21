@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'; // Replace with your actual home page c
 import Navbar from './components/Navbar';
 import SubscribePage from './pages/SubscribePage';
 import Footer from './components/Footer';
+import SignupPage from './pages/SignupPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/navbar' element={<Navbar/>}/>
           <Route path='/subscribe' element={<SubscribePage/>} />
           <Route path='/footer' element={<Footer/>}/>
+          <Route path='/signup' element={<SignupPage/>}/>
         </Routes>
         {/* <Navbar/> */}
         {/* <HomePage/> */}

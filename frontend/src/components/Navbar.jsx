@@ -60,7 +60,7 @@ const Navbar = () => {
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             <a
-              href=""
+              href="/subscribe"
               className="px-4 py-2 text-sm font-semibold text-blue-700 border border-blue-700 rounded hover:bg-blue-100"
             >
               Subscribe
